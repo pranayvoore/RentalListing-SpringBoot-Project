@@ -13,57 +13,96 @@ import javax.persistence.Transient;
 @Entity
 @Table(name = "user")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private String username;
+	private String username;
 
-    private String password;
+	private String password;
 
-    @Transient
-    private String passwordConfirm;
+	@Transient
+	private String passwordConfirm;
 
-    @ManyToMany
-    private Set<Role> roles;
+	@ManyToMany
+	private Set<Role> roles;
 
-    public Long getId() {
-        return id;
-    }
+	private String email;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	private long phonenum;
+	private String address;
+	private String imagepath;
 
-    public String getUsername() {
-        return username;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public String getPasswordConfirm() {
-        return passwordConfirm;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPasswordConfirm(String passwordConfirm) {
-        this.passwordConfirm = passwordConfirm;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
+	public String getPasswordConfirm() {
+		return passwordConfirm;
+	}
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
+	public void setPasswordConfirm(String passwordConfirm) {
+		this.passwordConfirm = passwordConfirm;
+	}
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public long getPhonenum() {
+		return phonenum;
+	}
+
+	public void setPhonenum(long phonenum) {
+		this.phonenum = phonenum;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getImagepath() {
+		return imagepath;
+	}
+
+	public void setImagepath(String imagepath) {
+		this.imagepath = imagepath;
+	}
+
 }
